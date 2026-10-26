@@ -72,6 +72,7 @@ a {
 /* 3. Layout -------------------------------------------------------------- */
 .container {
   width: min(100% - 2rem, 960px);
+  margin-inline: auto;
 }
 
 main {
