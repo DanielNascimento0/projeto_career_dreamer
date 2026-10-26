@@ -11,6 +11,13 @@ const textoParaLista = (texto) =>
     .map((item) => item.trim())
     .filter((item) => item !== '');
 
+  const modal = document.querySelector('#modal-aviso');
+
+  const mostrarAviso = (mensagem) => {
+    modal.querySelector('#modal-mensagem').textContent =  mensagem;
+    modal.showModal();
+  };
+
 // Quando a pessoa volta a digitar, some o aviso de erro do campo.
 formulario.addEventListener('input', (evento) => {
   evento.target.setCustomValidity('');
@@ -46,5 +53,5 @@ formulario.addEventListener('submit', (evento) => {
 
   // TODO: enviar o perfil para a API configurada em CONFIG.API_URL
   // e levar o usuário para a página resultado.html.
-  alert('Tente mais tarde');
+mostrarAviso('O serviço ainda não está disponível. Tente novamente mais tarde.');
 });
